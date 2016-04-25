@@ -11,4 +11,5 @@ Our project topic is making a monitoring system for smart factory.
 - Send the report regularly to the user via e-mail.
 
 #### Log
-2016.03.29. - Proposal Added
+- 2016.03.29. - Proposal Added
+- 2016.04.25. - Web Server Construction Implemented
