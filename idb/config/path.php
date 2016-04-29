@@ -1,6 +1,6 @@
 <?php
-    define('ROOT', $_SERVER['DOCUMENT_ROOT'].'/idb');
-    define('HTML_ROOT', '/idb');
+    define('ROOT', $_SERVER['DOCUMENT_ROOT'].'/iDB/idb');
+    define('HTML_ROOT', '/iDB/idb');
 
     define('CONFIG', ROOT.'/config');
     define('LIB', ROOT.'/lib');
