@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="<?=$this->CSS?>/<?=$this->page.'.css'?>">
     </head>
     <body>
+        <script src="<?=$this->JS.'/jquery-1.12.3.min.js'?>"></script>
         <?php include($this->MODULE.'/header.inc'); ?>
         <section>
             <article id="article">
