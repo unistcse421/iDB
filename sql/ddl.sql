@@ -28,7 +28,7 @@ CREATE TABLE report (
 CREATE TABLE data (
     device_id varchar(255) NOT NULL,
     category varchar(20) NOT NULL,
-    time datetime(6) NOT NULL,
+    created datetime(6) NOT NULL,
     value real NOT NULL,
     FOREIGN KEY (device_id) REFERENCES device(device_id)
 );
