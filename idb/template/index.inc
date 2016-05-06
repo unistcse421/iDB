@@ -4,10 +4,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title><?=$this->title?></title>
+        <!-- open sans web font -->
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
         <link rel="stylesheet" type="text/css" href="<?=$this->CSS?>/master.css">
         <link rel="stylesheet" type="text/css" href="<?=$this->CSS?>/<?=$this->page.'.css'?>">
+        <title><?=$this->title?></title>
     </head>
     <body>
         <script src="<?=$this->JS.'/jquery-1.12.3.min.js'?>"></script>

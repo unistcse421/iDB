@@ -9,3 +9,9 @@
     </div>
     <input type="submit" value="Sign In">
 </form>
+<div>
+    <a href="<?=$this->HTML_ROOT?>?page=identify">Forgot Password?</a>
+</div>
+<div>
+    <a href="<?=$this->HTML_ROOT?>?page=sign_up">Create a New Account</a>
+</div>

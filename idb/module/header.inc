@@ -10,7 +10,7 @@
         </ul>
         <ul class="menu">
             <li class="item"><a href="<?=$this->HTML_ROOT?>?page=sign_in">Sign In</a></li>
-            <li class="item"><a href="<?=$this->HTML_ROOT?>?page=sign_up">Sign Up</a></li>
+            <!--<li class="item"><a href="<?=$this->HTML_ROOT?>?page=sign_up">Sign Up</a></li>-->
             <li class="item"><a href="<?=$this->PAGE?>/logout.php">Log Out</a></li>
         </ul>
     </nav>

@@ -8,7 +8,8 @@
     $conn = db_init($db['host'], $db['user'], $db['passwd'], $db['name']);
 
     $view = new Template();
-    $view->parameters['title'] = "iDB Smart Factory System";
+    $view->parameters['title'] = "iDB Smart Factory System"; // It can be usesd in rendered *.inc file in this form: $this->title.
+    $view->parameters['conn'] = $conn;
 
     $view->parameters['HTML_ROOT'] = HTML_ROOT;
 
@@ -31,10 +32,12 @@
                 break;
             case 'monitor':
                 $view->parameters['header'] = 'Monitor';
-                $view->parameters['conn'] = $conn;
                 break;
             case 'about':
                 $view->parameters['header'] = 'About iDB';
+                break;
+            case 'identify':
+                $view->parameters['header'] = 'Forgot Password?';
                 break;
         }
     }

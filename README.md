@@ -1,7 +1,7 @@
 ### CSE421 Term Project
 # iDB - Smart Factory System
 
-This project is done in UNIST CSE421 Database System Class.
+This project is done in UNIST CSE421 Database Systems Class.
 
 Our project topic is making a monitoring system for smart factory.
 - Data acquisition from machine using microcontroller.
@@ -17,8 +17,10 @@ Our project topic is making a monitoring system for smart factory.
 ```php
 <?php header("Location: iDB"); ?>
 ```
+If you want to locate the directory in another location, please modify ```ROOT``` and ```HTML_ROOT``` in ```iDB/idb/config/path.php```.
 - ```git clone https://github.com/unistcse421/iDB.git```
 - ```cd iDB/idb/static/js```
+- ```rmdir d3```
 - ```git clone https://github.com/mbostock/d3.git```
 
 #### Log
