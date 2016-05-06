@@ -4,9 +4,8 @@ CREATE DATABASE idb;
 USE idb;
 
 CREATE TABLE account (
-    account_id varchar(20) PRIMARY KEY,
-    passwd varchar(255) NOT NULL,
-    email varchar(30)
+    account_id varchar(30) PRIMARY KEY,
+    passwd varchar(255) NOT NULL
 );
 
 CREATE TABLE machine (

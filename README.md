@@ -22,8 +22,3 @@ If you want to locate the directory in another location, please modify ```ROOT``
 - ```cd iDB/idb/static/js```
 - ```rmdir d3```
 - ```git clone https://github.com/mbostock/d3.git```
-
-#### Log
-- 2016.03.29. - Proposal added
-- 2016.04.25. - Web server construction implemented
-- 2016.04.29. - d3.js library included
