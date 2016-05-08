@@ -10,6 +10,9 @@ Our project topic is making a monitoring system for smart factory.
 - User can control the data they want to see and find useful information from data visualization.
 - Send the report regularly to the user via e-mail.
 
+#### Imported Libraries & Frameworks
+- [d3.js](https://d3js.org)
+
 #### System Installation Tutorial
 - Download Git
 - Open terminal and go to server root
