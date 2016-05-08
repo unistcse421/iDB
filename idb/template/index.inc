@@ -1,6 +1,8 @@
 <html>
     <head>
         <meta charset="utf-8">
+
+        <!-- responsive web -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,10 +16,12 @@
     <body>
         <script src="<?=$this->JS.'/jquery-1.12.3.min.js'?>"></script>
         <?php include($this->MODULE.'/header.inc'); ?>
-        <section>
-            <article id="article">
-                <?php include($this->TEMPLATE.'/'.$this->page.'.inc'); ?>
-            </article>
-        </section>
+        <div class="container_12">
+            <section>
+                <article id="article">
+                    <?php include($this->TEMPLATE.'/'.$this->page.'.inc'); ?>
+                </article>
+            </section>
+        </div>
     </body>
 </html>

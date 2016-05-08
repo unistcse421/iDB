@@ -1,7 +1,9 @@
-<p>
+<h2>
     Forgot Password?
-</p>
+</h2>
 <form action="<?=$this->PAGE?>/identify.php" method="post">
-    <input type="email" name="email" placeholder="ID">
-    <input type="submit" value="Send email">
+    <div class="field">
+        <input type="email" name="email" placeholder="E-mail address" title="E-mail address">
+    </div>
+    <button type="submit">Send E-mail</button>
 </form>

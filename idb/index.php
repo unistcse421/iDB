@@ -24,7 +24,7 @@
     if(!empty($_GET['page'])) {
         $view->parameters['page'] = $_GET['page'];
         switch($_GET['page']) {
-            case 'sign_in':
+            case 'sign_in': case 'identify':
                 $view->parameters['header'] = 'Sign In';
                 break;
             case 'sign_up':
@@ -35,9 +35,6 @@
                 break;
             case 'about':
                 $view->parameters['header'] = 'About iDB';
-                break;
-            case 'identify':
-                $view->parameters['header'] = 'Forgot Password?';
                 break;
         }
     }
