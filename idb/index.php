@@ -19,6 +19,7 @@
 
     $view->parameters['CSS'] = CSS;
     $view->parameters['JS'] = JS;
+    $view->parameters['IMG'] = IMG;
     $view->parameters['PAGE'] = PAGE;
 
     if(!empty($_GET['page'])) {

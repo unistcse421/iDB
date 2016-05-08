@@ -9,5 +9,6 @@
 
     define('CSS', HTML_ROOT.'/static/css');
     define('JS', HTML_ROOT.'/static/js');
+    define('IMG', HTML_ROOT.'/static/img');
     define('PAGE', HTML_ROOT.'/page');
 ?>
