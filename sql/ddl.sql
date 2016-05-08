@@ -14,7 +14,7 @@ CREATE TABLE machine (
 );
 
 CREATE TABLE device (
-    device_id varchar(255) PRIMARY KEY,
+    device_id int PRIMARY KEY AUTO_INCREMENT,
     device_name varchar(20)
 );
 
@@ -26,7 +26,7 @@ CREATE TABLE report (
 );
 
 CREATE TABLE data (
-    device_id varchar(255) NOT NULL,
+    device_id int NOT NULL,
     category varchar(20) NOT NULL,
     created datetime(6) NOT NULL,
     value real NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE owns (
 
 CREATE TABLE consists (
     machine_id int NOT NULL,
-    device_id varchar(255) NOT NULL,
+    device_id int NOT NULL,
     FOREIGN KEY (machine_id) REFERENCES machine(machine_id),
     FOREIGN KEY (device_id) REFERENCES device(device_id)
 );
