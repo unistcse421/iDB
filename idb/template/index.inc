@@ -9,19 +9,24 @@
         <!-- open sans web font -->
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
+        <!-- grid layout -->
+        <link rel="stylesheet" type="text/css" href="<?=$this->CSS?>/grid.css">
+
         <link rel="stylesheet" type="text/css" href="<?=$this->CSS?>/master.css">
         <link rel="stylesheet" type="text/css" href="<?=$this->CSS?>/<?=$this->page.'.css'?>">
         <title><?=$this->title?></title>
     </head>
     <body>
         <script src="<?=$this->JS.'/jquery-1.12.3.min.js'?>"></script>
-        <?php include($this->MODULE.'/header.inc'); ?>
-        <div class="container_12">
-            <section>
-                <article id="article">
-                    <?php include($this->TEMPLATE.'/'.$this->page.'.inc'); ?>
-                </article>
-            </section>
+        <div class="container">
+            <?php include($this->MODULE.'/header.inc'); ?>
+            <div>
+                <section>
+                    <article id="article">
+                        <?php include($this->TEMPLATE.'/'.$this->page.'.inc'); ?>
+                    </article>
+                </section>
+            </div>
         </div>
     </body>
 </html>
