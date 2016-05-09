@@ -17,16 +17,13 @@
         <title><?=$this->title?></title>
     </head>
     <body>
-        <script src="<?=$this->JS.'/jquery-1.12.3.min.js'?>"></script>
         <div class="container">
             <?php include($this->MODULE.'/header.inc'); ?>
-            <div>
-                <section>
-                    <article id="article">
-                        <?php include($this->TEMPLATE.'/'.$this->page.'.inc'); ?>
-                    </article>
-                </section>
-            </div>
+            <section id="section">
+                <article id="article">
+                    <?php include($this->TEMPLATE.'/'.$this->page.'.inc'); ?>
+                </article>
+            </section>
         </div>
     </body>
 </html>

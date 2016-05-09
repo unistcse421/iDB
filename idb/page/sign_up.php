@@ -8,8 +8,7 @@
     if($name_check->num_rows == 0) {
         // id: email address(varchar(30)), passwd: password(varchar(255))
         $fp = fopen(SQL.'/sign_up.sql', 'r');
-        mysqli_query($conn, "SET @id = '{$_POST['id']}'");
-        mysqli_query($conn, "SET @password = '{$_POST['passwd']}'");
+        db_set_var($conn, array('id'=>$_POST['id'], 'password'=>$_POST['passwd']));
         while(!feof($fp)) {
             $get = fgets($fp);
             if($get != "") {
