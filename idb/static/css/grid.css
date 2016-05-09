@@ -12,6 +12,7 @@ body {
     max-width: 1280px;
     margin: auto;
     font-size: 0; /* for removing word space between div's */
+    margin: 2rem;
 }
 
 /* row */
@@ -26,7 +27,8 @@ body {
     font-size: 16px; /* font-size reset */
     display: inline-block;
     box-sizing: border-box;
-    word-wrap: break-word;
+    word-break: normal;
+    /*word-wrap: break-word;*/
     /* gutter */
     padding-left: 0.5%;
     padding-right: 0.5%;
@@ -73,7 +75,7 @@ body {
 .pull-11 { margin-right: 91.66;  }
 
 /* for tablet */
-@media all and (max-width: 800px) {
+@media (min-width: 480px) and (max-width: 800px) {
     .col-1  { width: 25%; }
     .col-2  { width: 50%; }
     .col-3  { width: 75%; }
@@ -82,22 +84,23 @@ body {
     .push-1  { margin-left: 25%; }
     .push-2  { margin-left: 50%; }
     .push-3  { margin-left: 75%; }
-    .push-4, .push-5, .push-6, .push-7, .push-8, .push-9, .push-10, .push-11, .push-12 { margin-left: 100%; }
+    .push-4, .push-5, .push-6, .push-7, .push-8, .push-9, .push-10, .push-11, .push-12 { margin-left: 0%; }
 
     .pull-1  { margin-right: 25%; }
     .pull-2  { margin-right: 50%; }
     .pull-3  { margin-right: 75%; }
-    .pull-4, .pull-5, .pull-6, .pull-7, .pull-8, .pull-9, .pull-10, .pull-11, .pull-12 { margin-right: 100%; }
+    .pull-4, .pull-5, .pull-6, .pull-7, .pull-8, .pull-9, .pull-10, .pull-11, .pull-12 { margin-right: 0%; }
 }
 
 /* for mobile */
 @media all and (max-width: 480px) {
-    .col-1  { width: 50%; }
-    .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 { width: 100%; }
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 { width: 100%; }
 
-    .push-1  { margin-left: 50%; }
-    .push-2, .push-3, .push-4, .push-5, .push-6, .push-7, .push-8, .push-9, .push-10, .push-11, .push-12 { margin-left: 100%; }
+    [class*='push-'] {
+        margin-left: 0%;
+    }
 
-    .pull-1  { margin-right: 50%; }
-    .pull-2, .pull-3, .pull-4, .pull-5, .pull-6, .pull-7, .pull-8, .pull-9, .pull-10, .pull-11, .pull-12 { margin-right: 100%; }
+    [class*='pull-'] {
+        margin-right: 0%;
+    }
 }
