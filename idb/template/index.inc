@@ -17,6 +17,7 @@
         <title><?=$this->title?></title>
     </head>
     <body>
+        <?php session_start(); ?>
         <div class="container">
             <?php include($this->MODULE.'/header.inc'); ?>
             <section id="section">
