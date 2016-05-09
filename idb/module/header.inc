@@ -6,14 +6,12 @@
             <nav id="nav">
                 <ul class="menu">
                     <li class="item"><a href="<?=$this->HTML_ROOT?>?page=about">About iDB</a></li>
+                    <li class="item"><a href="<?=$this->HTML_ROOT?>?page=dashboard">Dashboard</a></li>
                 </ul>
-                <ul class="menu">
-                    <li class="item"><a href="<?=$this->HTML_ROOT?>?page=monitor">Monitor</a></li>
-                </ul>
-                <ul class="menu">
+                <ul class="menu" id="session">
                     <li class="item"><a href="<?=$this->HTML_ROOT?>?page=sign_in">Sign In</a></li>
                     <!--<li class="item"><a href="<?=$this->HTML_ROOT?>?page=sign_up">Sign Up</a></li>-->
-                    <!--<li class="item"><a href="<?=$this->PAGE?>/logout.php">Log Out</a></li>-->
+                    <!--<li class="item"><a href="<?=$this->PAGE?>/sign_out.php">Log Out</a></li>-->
                 </ul>
             </nav>
         </div>

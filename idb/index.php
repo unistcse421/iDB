@@ -31,8 +31,8 @@
             case 'sign_up':
                 $view->parameters['header'] = 'Sign Up';
                 break;
-            case 'monitor':
-                $view->parameters['header'] = 'Monitor';
+            case 'dashboard':
+                $view->parameters['header'] = 'Dashboard';
                 break;
             case 'about':
                 $view->parameters['header'] = 'About iDB';

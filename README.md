@@ -14,6 +14,8 @@ Our project topic is making a monitoring system for smart factory.
 - [d3.js](https://d3js.org)
 
 #### System Installation Tutorial
+- Download the server applications: Apache, PHP, MariaDB
+    - We recommend you to download MariaDB rather than MySQL, or download MySQL over 5.6 version, since MySQL under 5.5 version doesn't support millisecond and microsecond in time record.
 - Download Git
 - Open terminal and go to server root
 - Add the file index.php and add the code:
@@ -25,5 +27,7 @@ If you want to locate the directory in another location, please modify ```ROOT``
 - ```cd iDB/idb/static/js```
 - ```rmdir d3```
 - ```git clone https://github.com/mbostock/d3.git```
-
-We recommend you to download MariaDB rather than MySQL, or download MySQL over 5.6 version, since MySQL under 5.5 version doesn't support millisecond and microsecond in time record.
+- Initialize DB
+```sql
+source sql/ddl.sql;
+```

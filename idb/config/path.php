@@ -11,4 +11,6 @@
     define('JS', HTML_ROOT.'/static/js');
     define('IMG', HTML_ROOT.'/static/img');
     define('PAGE', HTML_ROOT.'/page');
+
+    define('SQL', ROOT.'/../sql');
 ?>
