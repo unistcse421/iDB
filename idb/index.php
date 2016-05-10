@@ -37,7 +37,7 @@
             case 'about':
                 $view->parameters['header'] = 'About iDB';
                 break;
-            case 'setting':
+            case 'setting': case 'delete':
                 $view->parameters['header'] = 'Setting';
                 break;
         }
