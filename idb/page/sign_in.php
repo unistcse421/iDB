@@ -1,6 +1,6 @@
 <?php
     include('../config/path.php');
-    include(CONFIG.'/db-config.php');
+    include(CONFIG.'/db_config.php');
     include(LIB.'/db.php');
 
     $conn = db_init($db['host'], $db['user'], $db['passwd'], $db['name']);

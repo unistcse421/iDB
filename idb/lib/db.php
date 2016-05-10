@@ -24,4 +24,16 @@
         }
         fclose($fp);
     }
+
+    function get_json_from_db($conn, $query) {
+        $data = array();
+        $result = mysqli_query($conn, $query);
+
+        for($i=0; $i<$result->num_rows; $i++) {
+            $row = mysqli_fetch_assoc($result);
+            $data[$i] = $row;
+        }
+
+        return json_encode($data);
+    }
 ?>
