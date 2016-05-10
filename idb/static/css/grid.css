@@ -76,23 +76,23 @@ body {
 
 /* for tablet */
 @media (min-width: 480px) and (max-width: 800px) {
-    .col-1  { width: 25%; }
-    .col-2  { width: 50%; }
-    .col-3  { width: 75%; }
-    .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 { width: 100%; }
+    .col-1, .col-2, .col-3 { width: 25%; }
+    .col-4, .col-5, .col-6 { width: 50%; }
+    .col-7, .col-8, .col-9 { width: 75%; }
+    .col-10, .col-11, .col-12 { width: 100%; }
 
-    .push-1  { margin-left: 25%; }
-    .push-2  { margin-left: 50%; }
-    .push-3  { margin-left: 75%; }
-    .push-4, .push-5, .push-6, .push-7, .push-8, .push-9, .push-10, .push-11, .push-12 { margin-left: 0%; }
+    .push-1, .push-2, .push-3 { margin-left: 25%; }
+    .push-4, .push-5, .push-6 { margin-left: 50%; }
+    .push-7, .push-8, .push-9 { margin-left: 75%; }
+    .push-10, .push-11, .push-12 { margin-left: 0%; }
 
-    .pull-1  { margin-right: 25%; }
-    .pull-2  { margin-right: 50%; }
-    .pull-3  { margin-right: 75%; }
-    .pull-4, .pull-5, .pull-6, .pull-7, .pull-8, .pull-9, .pull-10, .pull-11, .pull-12 { margin-right: 0%; }
+    .pull-1, .pull-2, .pull-3 { margin-right: 25%; }
+    .pull-4, .pull-5, .pull-6 { margin-right: 50%; }
+    .pull-7, .pull-8, .pull-9 { margin-right: 75%; }
+    .pull-10, .pull-11, .pull-12 { margin-right: 0%; }
 }
 
-/* for mobile */
+/* for mobile phone */
 @media all and (max-width: 480px) {
     .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 { width: 100%; }
 

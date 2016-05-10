@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-6">
+    <div class="col-4 push-1 pull-1">
         <p>Monitor your factory</p>
         <img src="<?=$this->IMG?>/main.jpg" alt="Sample Img" width="100%"/>
     </div>
