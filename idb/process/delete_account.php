@@ -3,10 +3,10 @@
     include(CONFIG.'/db_config.php');
     include(LIB.'/db.php');
 
-    $conn = db_init($db['host'], $db['user'], $db['passwd'], $db['name']);
+    $mysqli = new Mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
     session_start();
     $param = array('id'=>$_SESSION['id']);
-    db_var_query($conn, SQL.'/delete_account.sql', $param);
+    $mysqli->db_var_query(SQL.'/delete_account.sql', $param);
     session_destroy();
     header("Location:".HTML_ROOT);
 ?>
