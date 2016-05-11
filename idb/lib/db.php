@@ -14,15 +14,18 @@
 
     function db_var_query($conn, $filename, $param) {
         $fp = fopen($filename, 'r');
+        $i = 0;
         db_set_var($conn, $param);
 
         while(!feof($fp)) {
             $get = fgets($fp);
             if($get != "") {
-                mysqli_query($conn, $get);
+                $result[$i] = mysqli_query($conn, $get);
+                $i++;
             }
         }
         fclose($fp);
+        return $result;
     }
 
     function get_json_from_db($conn, $query) {

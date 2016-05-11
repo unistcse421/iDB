@@ -10,21 +10,22 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
         <!-- grid layout -->
-        <link rel="stylesheet" type="text/css" href="<?=$this->CSS?>/grid.css">
+        <link rel="stylesheet" type="text/css" href="<?=CSS?>/grid.css">
 
-        <link rel="stylesheet" type="text/css" href="<?=$this->CSS?>/master.css">
-        <link rel="stylesheet" type="text/css" href="<?=$this->CSS?>/<?=$this->page.'.css'?>">
-        <title><?=$this->title?></title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="<?=CSS?>/master.css">
+        <link rel="stylesheet" type="text/css" href="<?=CSS?>/<?=$page?>.css">
+        <title><?=$title?></title>
     </head>
     <body>
-        <?php session_start(); ?>
         <div class="container">
-            <?php include($this->MODULE.'/header.inc'); ?>
-            <section id="section">
+            <?php include(TEMPLATE.'/'.$page.'.inc'); ?>
+            <?php //include(MODULE.'/header.inc'); ?>
+            <!--<section id="section">
                 <article id="article">
-                    <?php include($this->TEMPLATE.'/'.$this->page.'.inc'); ?>
+                    <?php //include(TEMPLATE.'/'.$page.'.inc'); ?>
                 </article>
-            </section>
+            </section>-->
         </div>
     </body>
 </html>
