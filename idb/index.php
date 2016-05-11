@@ -1,24 +1,20 @@
 <?php
     include('config/path.php');
 
-    include(CONFIG.'/db_config.php');
-    include(LIB.'/db.php');
-
-    $mysqli = new mysqli($db['host'], $db['user'], $db['passwd'], $db['dbname']);
-    $title = "iDB Smart Factory System";
+    if(str_replace('\\', '/', getcwd()) != ROOT) { // str_replace() for window
+        echo "Please modify idb/config/path.php.";
+        exit(1);
+    }
 
     session_start();
+
+    $title = "iDB Smart Factory System";
 
     if(!empty($_GET['page'])) {
         $page_name = $_GET['page'];
     }
     else {
         $page_name = 'home';
-    }
-    
-    if(str_replace('\\', '/', getcwd()) != ROOT) { // for windows
-        echo "Please modify idb/config/path.php.";
-        exit(1);
     }
 
     switch($page_name) {

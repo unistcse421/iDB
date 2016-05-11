@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-4 push-4 pull-4">
-        <form action="<?=$this->PAGE?>/sign_up.php" method="post">
+        <form action="<?=PROCESS?>/sign_up.php" method="post">
             <div class="field">
                 <input type="email" name="id" placeholder="E-mail address" required title="E-mail address">
             </div>

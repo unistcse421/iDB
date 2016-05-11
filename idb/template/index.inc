@@ -4,7 +4,7 @@
 
         <!-- responsive web -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width">
 
         <!-- open sans web font -->
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -14,18 +14,25 @@
 
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="<?=CSS?>/master.css">
-        <link rel="stylesheet" type="text/css" href="<?=CSS?>/<?=$page?>.css">
+        <link rel="stylesheet" type="text/css" href="<?=CSS?>/<?=$page_name?>.css">
         <title><?=$title?></title>
     </head>
     <body>
         <div class="container">
-            <?php include(TEMPLATE.'/'.$page.'.inc'); ?>
-            <?php //include(MODULE.'/header.inc'); ?>
-            <!--<section id="section">
-                <article id="article">
-                    <?php //include(TEMPLATE.'/'.$page.'.inc'); ?>
+            <?php include(MODULE."/header.inc"); ?>
+            <section>
+                <article>
+                    <?php
+                        $page = PAGE.'/'.$page_name.'.inc';
+                        if(file_exists($page)) {
+                            include($page);
+                        }
+                        else {
+                            include(PAGE.'/not_found.inc');
+                        }
+                    ?>
                 </article>
-            </section>-->
+            </section>
         </div>
     </body>
 </html>

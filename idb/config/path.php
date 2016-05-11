@@ -11,6 +11,7 @@
     define('LIB', ROOT.'/lib');
 
     define('TEMPLATE', ROOT.'/template');
+    define('PAGE', ROOT.'/page');
     define('MODULE', ROOT.'/module');
 
     define('CSS', HTML_ROOT.'/static/css');
