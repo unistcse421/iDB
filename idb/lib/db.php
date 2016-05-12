@@ -7,7 +7,7 @@
             }
         }
 
-        public function db_var_query($filename, $param = array()) {
+        public function file_query($filename, $param = array()) {
             $fp = fopen($filename, 'r');
             $i = 0;
             self::db_set_var($param);

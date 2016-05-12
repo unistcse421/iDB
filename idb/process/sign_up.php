@@ -8,7 +8,7 @@
     if($id_check->num_rows == 0) {
         // id: email address(varchar(30)), passwd: password(varchar(255))
         $param = array('id'=>$_POST['id'], 'password'=>$_POST['passwd']);
-        $mysqli->db_var_query(SQL.'/sign_up.sql', $param);
+        $mysqli->file_query(SQL.'/sign_up.sql', $param);
         header("Location:".HTML_ROOT.'?page=sign_in');
     }
     else {
