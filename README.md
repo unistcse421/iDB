@@ -12,6 +12,7 @@ Our project topic is making a monitoring system for smart factory.
 
 #### Imported Libraries & Frameworks
 - [d3.js](https://d3js.org)
+- [jQuery](https://jquery.com/)
 
 #### System Installation Tutorial
 - Download the server applications: Apache, PHP, MariaDB
