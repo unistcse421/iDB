@@ -28,7 +28,7 @@
             $result = self::query($query);
 
             for($i=0; $i<$result->num_rows; $i++) {
-                $row = self::get_result()->fetch_assoc();
+                $row = $result->fetch_assoc();
                 $data[$i] = $row;
             }
 
