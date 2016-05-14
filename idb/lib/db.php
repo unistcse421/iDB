@@ -3,7 +3,7 @@
         public function db_set_var($param = array()) {
             $keys = array_keys($param);
             for($i=0; $i<count($keys); $i++) {
-                var_dump(self::query("SET @{$keys[$i]} = '{$param[$keys[$i]]}'"));
+                self::query("SET @{$keys[$i]} = '{$param[$keys[$i]]}'");
             }
         }
 
