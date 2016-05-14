@@ -1,1 +1,1 @@
-INSERT INTO account VALUES(@id, PASSWORD(@password));
+INSERT INTO account VALUES(@account_id, PASSWORD(@password));

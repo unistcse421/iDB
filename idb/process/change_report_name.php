@@ -5,7 +5,6 @@
 
     session_start();
     $mysqli = new Mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
-    $param = array('machine_id'=>$_GET['machine_id']);
-    $mysqli->file_query(SQL.'/delete_machine.sql', $param);
+    $mysqli->query("UPDATE report SET report_name='{$_GET['report_name']}' WHERE report_id='{$_GET['report_id']}'");
     header("Location:".HTML_ROOT.'?page=setting');
 ?>

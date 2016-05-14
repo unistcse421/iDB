@@ -5,7 +5,7 @@
 
     session_start();
     $mysqli = new Mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
-    $param = array('machine_id'=>$_GET['machine_id']);
-    $mysqli->file_query(SQL.'/delete_machine.sql', $param);
+    $param = array('account_id'=>$_SESSION['id']);
+    $mysqli->file_query(SQL.'/create_report.sql', $param);
     header("Location:".HTML_ROOT.'?page=setting');
 ?>

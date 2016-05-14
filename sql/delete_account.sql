@@ -1,1 +1,1 @@
-DELETE FROM account WHERE account_id=@id;
+DELETE FROM account WHERE account_id=@account_id;

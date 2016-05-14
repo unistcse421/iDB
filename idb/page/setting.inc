@@ -1,13 +1,16 @@
+<?php
+    include(CONFIG.'/db_config.php');
+    include(LIB.'/db.php');
+
+    $mysqli = new Mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
+?>
+
 <div class="row">
     <div class="col-12">
         <div>
             <h2>Machine Management</h2>
             <ul>
                 <?php
-                    include(CONFIG.'/db_config.php');
-                    include(LIB.'/db.php');
-
-                    $mysqli = new Mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
                     $result = $mysqli->query("SELECT machine_id, machine_name FROM owns NATURAL JOIN machine WHERE account_id='{$_SESSION['id']}'");
                     for($i=0; $i<$result->num_rows; $i++) {
                         $row = $result->fetch_assoc();
@@ -25,7 +28,21 @@
         <div>
             <h2>Report Management</h2>
             <ul>
-                <li><a href="#">Create a Report</a></li>
+                <?php
+                    $result = $mysqli->query("SELECT report_id, report_name FROM reserves NATURAL JOIN report WHERE account_id='{$_SESSION['id']}'");
+                    for($i=0; $i<$result->num_rows; $i++) {
+                        $row = $result->fetch_assoc();
+                        echo '<li>'.$row['report_name']
+                                .'<ul>'
+                                    .'<li><button onclick="change_report_name('.$row['report_id'].');">Change the name</button></li>'
+                                    .'<li>Set the plan</li>'
+                                    .'<li>Connect machine to the report</li>'
+                                    .'<li><button onclick="delete_report('.$row['report_id'].');">Delete the report</button></li>'
+                                .'</ul>'
+                            .'</li>';
+                    }
+                ?>
+                <li><button onclick="create_report();">Create a Report</button></li>
             </ul>
         </div>
         <div>

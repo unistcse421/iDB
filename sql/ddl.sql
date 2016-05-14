@@ -21,8 +21,7 @@ CREATE TABLE device (
 CREATE TABLE report (
     report_id int PRIMARY KEY AUTO_INCREMENT,
     report_name varchar(20),
-    period datetime NOT NULL,
-    created datetime NOT NULL
+    updated datetime NOT NULL
 );
 
 CREATE TABLE data (
@@ -59,4 +58,11 @@ CREATE TABLE refers (
     machine_id int NOT NULL,
     FOREIGN KEY (report_id) REFERENCES report(report_id),
     FOREIGN KEY (machine_id) REFERENCES machine(machine_id)
+);
+
+CREATE TABLE plan (
+    report_id int NOT NULL,
+    period int NOT NULL, # 0: month, 1: week
+    day int NOT NULL, # 0~30: date(0 for 1st, 1 for 2nd, ...), 0~6: day(0 for Sunday, 1 for Monday, ...)
+    FOREIGN KEY (report_id) REFERENCES report(report_id)
 );
