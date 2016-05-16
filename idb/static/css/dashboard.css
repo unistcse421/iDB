@@ -1,23 +1,22 @@
-
 #lineChart {    
 	position:absolute;
 	top:10px;
 	left:10px;
-	width:400px;
-	height: 400px; 
+	width:800px;
+	height: 800px; 
 }
 
 #probChart {    
 	position:absolute;
-	top:10px;
-	left:410px;
-	height: 150px;
+	top:850px;
+	left:10px;
+	height: 300px;
 }
 
 #FSChart {
 	position:absolute;
-	top:160px;
-	left:410px;
+	top:1300px;
+	left:10px;
 	height: 250px;
 }
 
