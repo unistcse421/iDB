@@ -5,8 +5,7 @@
 
     $mysqli = new Mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
     session_start();
-    $param = array('account_id'=>$_SESSION['id']);
-    $mysqli->file_query(SQL.'/delete_account.sql', $param);
+    $mysqli->query("SELECT delete_account('{$_SESSION['id']}')");
     session_destroy();
     header("Location:".HTML_ROOT);
 ?>
