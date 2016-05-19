@@ -9,16 +9,13 @@
         <!-- open sans web font -->
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-        <!-- grid layout -->
-        <link rel="stylesheet" type="text/css" href="<?=CSS?>/grid.css">
-
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="<?=CSS?>/master.css">
         <link rel="stylesheet" type="text/css" href="<?=CSS?>/<?=$page_name?>.css">
         <title><?=$title?></title>
     </head>
     <body>
-        <div class="container">
+        <div>
             <?php include(MODULE."/header.inc"); ?>
             <section>
                 <article>

@@ -1,8 +1,8 @@
-<nav id="nav">
-    <ul class="menu">
-        <li class="item"><a href="<?=HTML_ROOT?>">Home</a></li>
+<nav>
+    <ul>
+        <li><a href="<?=HTML_ROOT?>">Home</a></li>
     </ul>
     <ul class="menu">
-        <li class="item"><a href="<?=HTML_ROOT?>?page=sign_in">Sign In</a></li>
+        <li><a href="<?=HTML_ROOT?>?page=sign_in">Sign In</a></li>
     </ul>
 </nav>
