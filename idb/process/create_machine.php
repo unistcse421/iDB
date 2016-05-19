@@ -4,8 +4,7 @@
     include(LIB.'/db.php');
 
     session_start();
-    $mysqli = new Mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
-    $param = array('account_id'=>$_SESSION['id']);
-    $mysqli->file_query(SQL.'/create_machine.sql', $param);
+    $mysqli = new mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
+    $mysqli->query("SELECT create_machine('{$_SESSION['id']}')");
     header("Location:".HTML_ROOT.'?page=setting');
 ?>

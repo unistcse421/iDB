@@ -4,8 +4,7 @@
     include(LIB.'/db.php');
 
     session_start();
-    $mysqli = new Mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
-    $param = array('machine_id'=>$_GET['machine_id']);
-    $mysqli->file_query(SQL.'/delete_machine.sql', $param);
+    $mysqli = new mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
+    $mysqli->query("SELECT delete_machine('{$_GET['machine_id']}')");
     header("Location:".HTML_ROOT.'?page=setting');
 ?>
