@@ -3,7 +3,7 @@
     include(CONFIG.'/db_config.php');
     include(LIB.'/db.php');
 
-    $mysqli = new mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
+    $mysqli = new mysqli($db['host'], $db['user'], $db['passwd'], $db['dbname']);
     session_start();
     $mysqli->query("SELECT delete_account('{$_SESSION['id']}')");
     session_destroy();

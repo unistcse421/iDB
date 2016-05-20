@@ -34,6 +34,6 @@
     </body>
     <script>const ROOT = '<?=HTML_ROOT?>';</script>
     <script src="<?=JS?>/jquery-1.12.3.min.js"></script>
-    <script src="<?=JS?>/d3/d3.min.js"></script>
+    <script src="<?=JS?>/d3.min.js"></script>
     <script src="<?=JS?>/<?=$page_name?>.js"></script>
 </html>

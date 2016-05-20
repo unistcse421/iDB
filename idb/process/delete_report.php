@@ -4,8 +4,7 @@
     include(LIB.'/db.php');
 
     session_start();
-    $mysqli = new Mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
-    $param = array('report_id'=>$_GET['report_id']);
-    $mysqli->file_query(SQL.'/delete_report.sql', $param);
+    $mysqli = new mysqli($db['host'], $db['user'], $db['passwd'], $db['dbname']);
+    $mysqli->query("SELECT delete_report('{$_GET['report_id']}')");
     header("Location:".HTML_ROOT.'?page=setting');
 ?>

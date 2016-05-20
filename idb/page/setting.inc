@@ -2,7 +2,7 @@
     include(CONFIG.'/db_config.php');
     include(LIB.'/db.php');
 
-    $mysqli = new Mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
+    $mysqli = new mysqli($db['host'], $db['user'], $db['passwd'], $db['dbname']);
 ?>
 
 <div>

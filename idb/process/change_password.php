@@ -4,7 +4,7 @@
     include(LIB.'/db.php');
 
     session_start();
-    $mysqli = new mysql($db['host'], $db['user'], $db['passwd'], $db['dbname']);
+    $mysqli = new mysqli($db['host'], $db['user'], $db['passwd'], $db['dbname']);
     $old_passwd = $mysqli->query("SELECT passwd FROM account WHERE account_id='{$_SESSION['id']}'")->fetch_assoc()['passwd'];
     $check_passwd = $mysqli->query("SELECT PASSWORD('{$_POST['old']}') AS passwd")->fetch_assoc()['passwd'];
 
