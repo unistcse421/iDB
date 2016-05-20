@@ -25,10 +25,8 @@ Our project topic is making a monitoring system for smart factory.
 ```
 If you want to locate the directory in another location, please modify ```ROOT``` and ```HTML_ROOT``` in ```iDB/idb/config/path.php```.
 - ```git clone https://github.com/unistcse421/iDB.git```
-- ```cd iDB/idb/static/js```
-- ```rmdir d3```
-- ```git clone https://github.com/mbostock/d3.git```
-- Initialize DB
+- ```cd sql```
+- Initialize DB(Be sure that your current directory is iDB/sql)
 ```sql
-source sql/ddl.sql;
+source setup.sql;
 ```
