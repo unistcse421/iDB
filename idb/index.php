@@ -1,7 +1,7 @@
 <?php
     include('config/path.php');
 
-    if(str_replace('\\', '/', getcwd()) != ROOT) { // str_replace() for window
+    if(str_replace('\\', '/', getcwd()) != ROOT) { // str_replace() for windows
         echo "Please modify idb/config/path.php.";
         exit(1);
     }

@@ -9,7 +9,7 @@
     <h2>Machine Management</h2>
     <ul>
         <?php
-            $result = $mysqli->query("SELECT machine_id, machine_name FROM owns NATURAL JOIN machine WHERE account_id='{$_SESSION['id']}'");
+            $result = $mysqli->query("SELECT machine_id, machine_name FROM manages NATURAL JOIN machine WHERE account_id='{$_SESSION['id']}'");
             for($i=0; $i<$result->num_rows; $i++) {
                 $row = $result->fetch_assoc();
                 echo '<li>'.$row['machine_name']
@@ -21,6 +21,25 @@
             }
         ?>
         <li><button onclick="create_machine();">Create a Machine</button></li>
+    </ul>
+</div>
+<div>
+    <h2>Device Management</h2>
+    <ul>
+        <?php
+            $result = $mysqli->query("SELECT device_id, device_name FROM owns NATURAL JOIN device WHERE account_id='{$_SESSION['id']}'");
+            for($i=0; $i<$result->num_rows; $i++) {
+                $row = $result->fetch_assoc();
+                echo '<li>'.$row['device_name']
+                        .'<ul>'
+                            .'<li><button onclick="change_device_name(\''.$row['device_id'].'\');">Change the name</button></li>'
+                            .'<li><button onclick="delete_device(\''.$row['device_id'].'\');">Delete the device</button></li>'
+                            .'<li>Export the data</li>'
+                        .'</ul>'
+                    .'</li>';
+            }
+        ?>
+        <li><button onclick="register_device();">Register New Device</button></li>
     </ul>
 </div>
 <div>

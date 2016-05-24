@@ -34,6 +34,13 @@ CREATE TABLE data (
 
 CREATE TABLE owns (
     account_id varchar(20) NOT NULL,
+    device_id varchar(255) NOT NULL,
+    FOREIGN KEY (account_id) REFERENCES account(account_id),
+    FOREIGN KEY (device_id) REFERENCES device(device_id)
+);
+
+CREATE TABLE manages (
+    account_id varchar(20) NOT NULL,
     machine_id int NOT NULL,
     FOREIGN KEY (account_id) REFERENCES account(account_id),
     FOREIGN KEY (machine_id) REFERENCES machine(machine_id)
@@ -60,7 +67,7 @@ CREATE TABLE refers (
     FOREIGN KEY (machine_id) REFERENCES machine(machine_id)
 );
 
-CREATE TABLE plan (
+CREATE TABLE plans (
     report_id int NOT NULL,
     period int NOT NULL, # 0: month, 1: week
     day int NOT NULL, # 0~30: date(0 for 1st, 1 for 2nd, ...), 0~6: day(0 for Sunday, 1 for Monday, ...)
