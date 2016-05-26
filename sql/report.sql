@@ -19,8 +19,6 @@ CREATE FUNCTION change_report_name(rid int, rname varchar(20)) RETURNS int
 
 CREATE FUNCTION delete_report(rid int) RETURNS int
     BEGIN
-        DELETE FROM reserves WHERE report_id=rid;
-        DELETE FROM refers WHERE report_id=rid;
         DELETE FROM report WHERE report_id=rid;
         RETURN 1;
     END$$

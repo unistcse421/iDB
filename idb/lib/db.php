@@ -24,7 +24,7 @@
 
     function get_json_from_db($mysqli, $query) {
         $data = array();
-        $result = self::query($query);
+        $result = $mysqli->query($query);
 
         for($i=0; $i<$result->num_rows; $i++) {
             $row = $result->fetch_assoc();

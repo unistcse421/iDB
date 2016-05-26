@@ -5,6 +5,7 @@
 
     session_start();
     $mysqli = new mysqli($db['host'], $db['user'], $db['passwd'], $db['dbname']);
+    $location = "Location:".HTML_ROOT.'?page=setting';
 
     switch($_GET['func']) {
         case 'create':
@@ -16,7 +17,15 @@
         case 'delete':
             $mysqli->query("SELECT delete_machine('{$_GET['machine_id']}')");
             break;
+        case 'attach':
+            $mysqli->query("SELECT attach_device('{$_POST['machine_id']}', '{$_POST['device_id']}')");
+            $location = "Location:".HTML_ROOT.'?page=dashboard';
+            break;
+        case 'detach':
+            $mysqli->query("SELECT detach_device('{$_GET['machine_id']}', '{$_GET['device_id']}')");
+            $location = "Location:".HTML_ROOT.'?page=dashboard';
+            break;
     }
 
-    header("Location:".HTML_ROOT.'?page=setting');
+    header($location);
 ?>

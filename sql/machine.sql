@@ -21,9 +21,6 @@ CREATE FUNCTION change_machine_name(mid int, mname varchar(20)) RETURNS int
 
 CREATE FUNCTION delete_machine(mid int) RETURNS int
     BEGIN
-        DELETE FROM manages WHERE machine_id=mid;
-        DELETE FROM refers WHERE machine_id=mid;
-        DELETE FROM consists WHERE machine_id=mid;
         DELETE FROM machine WHERE machine_id=mid;
         RETURN 1;
     END$$
