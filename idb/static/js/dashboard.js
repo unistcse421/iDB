@@ -1,29 +1,6 @@
-var x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-var w = 200, h = 100;
 
-var svg = d3.select("article")
-            .append("svg")
-            .attr("width", w).attr("height", h);
 
-svg.selectAll("rect")
-    .data(x)
-    .enter()
-    .append("rect")
-    .attr("x", function(d, i) {
-        return i*(w/x.length);
-    })
-    .attr("y", function(d) {
-        return h - d;
-    })
-    .attr("width", w/x.length - 1)
-    .attr("height", function(d) {
-        return d;
-    })
-    .attr("fill", function(d) {
-        return "hotpink";
-    });
-
-//-------------------------------------------------------------
+//lineChart-------------------------------------------------------------
 
 var margin = {top: 20, right: 80, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
@@ -52,13 +29,13 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.temperature); });
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("lineChart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.tsv(ROOT + "/static/js/data.tsv", function(error, data) {
+d3.tsv("data.tsv", function(error, data) {
   if (error) throw error;
 
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
@@ -115,3 +92,32 @@ d3.tsv(ROOT + "/static/js/data.tsv", function(error, data) {
       .attr("dy", ".35em")
       .text(function(d) { return d.name; });
 });
+
+
+
+//probChart------------------------------------------------------
+
+var x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+var w = 200, h = 100;
+
+var svg = d3.select("probChart")
+            .append("svg")
+            .attr("width", w).attr("height", h);
+
+svg.selectAll("rect")
+    .data(x)
+    .enter()
+    .append("rect")
+    .attr("x", function(d, i) {
+        return i*(w/x.length);
+    })
+    .attr("y", function(d) {
+        return h - d;
+    })
+    .attr("width", w/x.length - 1)
+    .attr("height", function(d) {
+        return d;
+    })
+    .attr("fill", function(d) {
+        return "hotpink";
+    });
