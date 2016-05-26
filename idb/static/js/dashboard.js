@@ -1,5 +1,5 @@
 var x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-var w = 200, h = 100;
+
 
 
 
@@ -97,12 +97,14 @@ d3.tsv(ROOT + "/static/js/data.tsv", function(error, data) {
 
 //-----------------------------------------------------------
 
-var svg = d3.select("article")
+var w = 200, h = 100;
+var svg2 = d3.select("article")
             .append("svg")
+            .attr("y", height);
             .attr("width", w).attr("height", h);
 
 
-svg.selectAll("rect")
+svg2.selectAll("rect")
     .data(x)
     .enter()
     .append("rect")
