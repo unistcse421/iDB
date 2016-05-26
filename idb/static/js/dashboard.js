@@ -100,7 +100,7 @@ d3.tsv(ROOT + "/static/js/data.tsv", function(error, data) {
 var w = 200, h = 100;
 var svg2 = d3.select("article")
             .append("svg")
-            .attr("y", height);
+            .attr("y", height + margin.top + margin.bottom)
             .attr("width", w).attr("height", h);
 
 
