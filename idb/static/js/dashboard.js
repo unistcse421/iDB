@@ -30,7 +30,7 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.temperature); });
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("lineChart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -98,9 +98,8 @@ d3.tsv(ROOT + "/static/js/data.tsv", function(error, data) {
 //-----------------------------------------------------------
 
 var w = 200, h = 100;
-var svg2 = d3.select("article")
+var svg2 = d3.select("probChart")
             .append("svg")
-            .attr("y", height + margin.top + margin.bottom)
             .attr("width", w).attr("height", h);
 
 
