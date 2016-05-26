@@ -4,8 +4,8 @@
      * It is set assuming that the iDB directory is located in root directory.
      * Please modify this part if you want to locate iDB in another directory.
      */
-    define('ROOT', $_SERVER['DOCUMENT_ROOT'].'/iDB/idb');
-    define('HTML_ROOT', '/iDB/idb');
+    define('ROOT', $_SERVER['DOCUMENT_ROOT'].'/iDB/web');
+    define('HTML_ROOT', '/iDB/web');
 
     define('CONFIG', ROOT.'/config');
     define('LIB', ROOT.'/lib');
@@ -19,6 +19,4 @@
     define('IMG', HTML_ROOT.'/static/img');
 
     define('PROCESS', HTML_ROOT.'/process');
-
-    define('SQL', ROOT.'/../sql');
 ?>

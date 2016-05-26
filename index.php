@@ -1,3 +1,3 @@
 <?php
-    header("Location: idb");
+    header("Location: web");
 ?>
