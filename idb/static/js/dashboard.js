@@ -1,9 +1,6 @@
 var x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 var w = 200, h = 100;
 
-var svg = d3.select("article")
-            .append("svg")
-            .attr("width", w).attr("height", h);
 
 
 var margin = {top: 20, right: 80, bottom: 30, left: 50},
@@ -100,6 +97,9 @@ d3.tsv(ROOT + "/static/js/data.tsv", function(error, data) {
 
 //-----------------------------------------------------------
 
+var svg = d3.select("article")
+            .append("svg")
+            .attr("width", w).attr("height", h);
 
 
 svg.selectAll("rect")
