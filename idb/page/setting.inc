@@ -6,24 +6,6 @@
 ?>
 
 <div>
-    <h2>Machine Management</h2>
-    <ul>
-        <?php
-            $result = $mysqli->query("SELECT machine_id, machine_name FROM manages NATURAL JOIN machine WHERE account_id='{$_SESSION['id']}'");
-            for($i=0; $i<$result->num_rows; $i++) {
-                $row = $result->fetch_assoc();
-                echo '<li>'.$row['machine_name']
-                        .'<ul>'
-                            .'<li><button onclick="change_machine_name('.$row['machine_id'].');">Change the name</button></li>'
-                            .'<li><button onclick="delete_machine('.$row['machine_id'].');">Delete the machine</button></li>'
-                        .'</ul>'
-                    .'</li>';
-            }
-        ?>
-        <li><button onclick="create_machine();">Create a Machine</button></li>
-    </ul>
-</div>
-<div>
     <h2>Device Management</h2>
     <ul>
         <?php
@@ -40,6 +22,24 @@
             }
         ?>
         <li><button onclick="register_device();">Register New Device</button></li>
+    </ul>
+</div>
+<div>
+    <h2>Machine Management</h2>
+    <ul>
+        <?php
+            $result = $mysqli->query("SELECT machine_id, machine_name FROM manages NATURAL JOIN machine WHERE account_id='{$_SESSION['id']}'");
+            for($i=0; $i<$result->num_rows; $i++) {
+                $row = $result->fetch_assoc();
+                echo '<li>'.$row['machine_name']
+                        .'<ul>'
+                            .'<li><button onclick="change_machine_name('.$row['machine_id'].');">Change the name</button></li>'
+                            .'<li><button onclick="delete_machine('.$row['machine_id'].');">Delete the machine</button></li>'
+                        .'</ul>'
+                    .'</li>';
+            }
+        ?>
+        <li><button onclick="create_machine();">Create a Machine</button></li>
     </ul>
 </div>
 <div>
