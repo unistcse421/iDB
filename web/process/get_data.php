@@ -6,5 +6,5 @@
     session_start();
     $mysqli = new mysqli($db['host'], $db['user'], $db['passwd'], $db['dbname']);
 
-    $mysqli->query("INSERT INTO data VALUES('{$_GET['id']}', '{$_GET['c']}', NOW(), '{$_GET['val']}')");
+    $mysqli->query("INSERT INTO data VALUES('{$_GET['id']}', '{$_GET['c']}', CURTIME(6), '{$_GET['val']}')");
 ?>
