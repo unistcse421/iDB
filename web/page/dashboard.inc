@@ -1,3 +1,5 @@
+
+<div id = "header">
 <?php
     include(CONFIG.'/db_config.php');
     include(LIB.'/db.php');
@@ -73,3 +75,8 @@
         }
     }
 ?>
+</div>
+
+<div id="lineChart"></div>
+
+<div id="probChart"></div><div id="FSChart"></div>

@@ -12,6 +12,10 @@
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="<?=CSS?>/master.css">
         <link rel="stylesheet" type="text/css" href="<?=CSS?>/<?=$page_name?>.css">
+        <style>
+
+
+        </style>
         <title><?=$title?></title>
     </head>
     <body>

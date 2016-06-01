@@ -1,5 +1,52 @@
-var x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+/* var superscript = "⁰¹²³⁴⁵⁶⁷⁸⁹",
+    formatPower = function(d) { return (d + "").split("").map(function(c) { return superscript[c]; }).join(""); };
 
+var margin = {top: 40.5, right: 40.5, bottom: 50.5, left: 60.5},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var x = d3.scale.linear()
+    .domain([0, 100])
+    .range([0, width]);
+
+var y = d3.scale.log()
+    .base(Math.E)
+    .domain([Math.exp(0), Math.exp(9)])
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .tickFormat(function(d) { return "e" + formatPower(Math.round(Math.log(d))); });
+
+var line = d3.svg.line()
+    .x(function(d) { return x(d[0]); })
+    .y(function(d) { return y(d[1]); });
+
+var svg = d3.select("#lineChart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+svg.append("g")
+    .attr("class", "axis axis--y")
+    .attr("transform", "translate(-10,0)")
+    .call(yAxis);
+
+svg.append("g")
+    .attr("class", "axis axis--x")
+    .attr("transform", "translate(0," + (height + 10) + ")")
+    .call(xAxis);
+
+svg.append("path")
+    .datum(d3.range(100).map(function(x) { return [x, x * x + x + 1]; }))
+    .attr("class", "line")
+    .attr("d", line); */
 
 
 
@@ -9,11 +56,9 @@ var margin = {top: 20, right: 80, bottom: 30, left: 50},
 
 var parseDate = d3.time.format("%Y%m%d").parse;
 
-var x = d3.time.scale()
-    .range([0, width]);
+var x = d3.time.scale().range([0, width]);
 
-var y = d3.scale.linear()
-    .range([height, 0]);
+var y = d3.scale.linear().range([height, 0]);
 
 var color = d3.scale.category10();
 
@@ -30,7 +75,7 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.temperature); });
 
-var svg = d3.select("lineChart").append("svg")
+var svg = d3.select("#lineChart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -54,9 +99,9 @@ d3.tsv(ROOT + "/static/js/data.tsv", function(error, data) {
     };
   });
 
-  x.domain(d3.extent(data, function(d) { return d.date; }));
+  x = d3.time.scale().range([0, width]).domain(d3.extent(data, function(d) { return d.date; }));
 
-  y.domain([
+  y = d3.scale.linear().range([height, 0]).domain([
     d3.min(cities, function(c) { return d3.min(c.values, function(v) { return v.temperature; }); }),
     d3.max(cities, function(c) { return d3.max(c.values, function(v) { return v.temperature; }); })
   ]);
@@ -97,11 +142,16 @@ d3.tsv(ROOT + "/static/js/data.tsv", function(error, data) {
 
 //-----------------------------------------------------------
 
-var w = 200, h = 100;
-var svg2 = d3.select("probChart")
+var x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+var w = 470, h = 300;
+var svg2 = d3.select("#probChart")
             .append("svg")
             .attr("width", w).attr("height", h);
 
+/* var x2 = d3.scale.linear()
+    .domain([0 100])
+    .range([0, h]); */
 
 svg2.selectAll("rect")
     .data(x)
@@ -123,3 +173,26 @@ svg2.selectAll("rect")
 
 //-------------------------------------------------------------
 
+
+var width2 = 470,
+    height2 = 300;
+
+var data2 = d3.range(20).map(function() { return [Math.random() * width, Math.random() * height]; });
+
+var color = d3.scale.category10();
+
+d3.select("#FSChart")
+  .append("svg")
+    .attr("width", width2)
+    .attr("height", height2)
+  .selectAll("circle")
+    .data(data2)
+  .enter().append("circle")
+    .attr("transform", function(d) { return "translate(" + d + ")"; })
+    .attr("r", 10)
+    .style("fill", function(d, i) { return color(i); });
+
+
+
+
+//-----------------------------------------------------------
