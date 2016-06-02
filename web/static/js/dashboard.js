@@ -144,10 +144,13 @@ d3.tsv(ROOT + "/static/js/data.tsv", function(error, data) {
 
 var x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
-var w = 470, h = 300;
+var w = 410, h = 240;
+var m = {top:30, bottom: 30, left: 30, right: 30};
 var svg2 = d3.select("#probChart")
             .append("svg")
-            .attr("width", w).attr("height", h);
+            .attr("width", w + m.left + m.right).attr("height", h + m.top + m.bottom)
+            .append("g")
+            .attr("transform", "translate(" + m.left + "," + m.top + ")");;
 
 /* var x2 = d3.scale.linear()
     .domain([0 100])
