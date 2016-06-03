@@ -2,6 +2,8 @@ var svg1 = d3.select("#lineChart").append("svg")
 
 var drawGraph1 = function(data) {
 
+  d3.select("#lineChart").remove();
+
   var superscript = "⁰¹²³⁴⁵⁶⁷⁸⁹",
       formatPower = function(d) { return (d + "").split("").map(function(c) { return superscript[c]; }).join(""); };
 
