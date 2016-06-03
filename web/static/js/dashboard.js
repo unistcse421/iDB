@@ -1,4 +1,4 @@
-
+var svg1 = d3.select("#lineChart").append("svg")
 
 var drawGraph1 = function(data) {
 
@@ -31,8 +31,7 @@ var drawGraph1 = function(data) {
       .x(function(d) { return x(d[0]); })
       .y(function(d) { return y(d[1]); });
 
-  var svg = d3.select("#lineChart").append("svg")
-      .attr("width", width + margin.left + margin.right)
+  svg1.attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
