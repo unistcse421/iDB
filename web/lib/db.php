@@ -22,13 +22,17 @@
         return $result;
     }
 
-    function get_json_from_db($mysqli, $query) {
+    function get_json_from_db($mysqli, $query, $order="") {
         $data = array();
         $result = $mysqli->query($query);
 
         for($i=0; $i<$result->num_rows; $i++) {
             $row = $result->fetch_assoc();
             $data[$i] = $row;
+        }
+
+        if($order == "REVERSE") {
+            $data = array_reverse($data);
         }
 
         return json_encode($data);
