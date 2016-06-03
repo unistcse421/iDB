@@ -13,7 +13,6 @@ Our project topic is making a monitoring system for smart factory.
 #### Imported Libraries & Frameworks
 - [d3.js](https://d3js.org)
 - [jQuery](https://jquery.com/)
-- [Arduino DHT Sensor library](http://www.dfrobot.com/wiki/index.php?title=DHT11_Temperature_and_Humidity_Sensor_(SKU:_DFR0067))
 
 #### System Installation Tutorial
 - Download the server applications: Apache, PHP, MariaDB
@@ -31,3 +30,8 @@ If you want to locate the directory in another location, please modify ```ROOT``
 ```sql
 source setup.sql;
 ```
+
+#### How to use the hardware code
+- Arduino
+    - Register the device and remember the id
+    - Modify the code as you want; the sample code only inserts the sample data into database
