@@ -2,7 +2,7 @@ var svg1 = d3.select("#lineChart").append("svg")
 
 var drawGraph1 = function(data) {
 
-  d3.select("svg1").remove();
+  d3.select("#lineChart").select("svg").remove();
 
   var superscript = "⁰¹²³⁴⁵⁶⁷⁸⁹",
       formatPower = function(d) { return (d + "").split("").map(function(c) { return superscript[c]; }).join(""); };
@@ -38,17 +38,17 @@ var drawGraph1 = function(data) {
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  svg.append("g")
+  svg1.append("g")
       .attr("class", "axis axis--y")
       .attr("transform", "translate(-10,0)")
       .call(yAxis);
 
-  svg.append("g")
+  svg1.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + (height + 10) + ")")
       .call(xAxis);
 
-  svg.append("path")
+  svg1.append("path")
       .datum(d3.range(100).map(function(x) { return [x, x * x + x + 1]; }))
       .attr("class", "line")
       .attr("d", line);
