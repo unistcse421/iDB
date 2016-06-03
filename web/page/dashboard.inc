@@ -1,5 +1,5 @@
 
-<div id = "header">
+<div>
 <?php
     include(CONFIG.'/db_config.php');
     include(LIB.'/db.php');
@@ -48,7 +48,7 @@
             }
             for($i=0; $i<$result->num_rows; $i++) {
                 $row = $result->fetch_assoc();
-                echo '<li>'.$row['device_name'].' <a href="'.PROCESS.'/machine.php?func=detach&machine_id='.$_POST['machine_id'].'&device_id='.$row['device_id'].'">Detach</a></li>';
+                echo '<div><li>'.$row['device_name'].' <a href="'.PROCESS.'/machine.php?func=detach&machine_id='.$_POST['machine_id'].'&device_id='.$row['device_id'].'">Detach</a></li></div>';
             }
         }
     ?>
@@ -75,15 +75,15 @@
         }*/
     }
 ?>
-</div>
+    <div id="lineChart"></div>
 
-<div id="lineChart"></div>
+    <div id="probChart"></div><div id="FSChart"></div>
 
-<div id="probChart"></div><div id="FSChart"></div>
+    <div id="json" style="display: none;">
+        <?php echo $_POST['machine_id']; ?>
+    </div>
 
-<div id="json" style="display: none;">
-    <?php echo $_POST['machine_id']; ?>
-</div>
+    <div id="result">
+    </div>
 
-<div id="result">
 </div>
