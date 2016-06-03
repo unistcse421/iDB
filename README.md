@@ -13,6 +13,7 @@ Our project topic is making a monitoring system for smart factory.
 #### Imported Libraries & Frameworks
 - [d3.js](https://d3js.org)
 - [jQuery](https://jquery.com/)
+- [Arduino DHT Sensor library](http://www.dfrobot.com/wiki/index.php?title=DHT11_Temperature_and_Humidity_Sensor_(SKU:_DFR0067))
 
 #### System Installation Tutorial
 - Download the server applications: Apache, PHP, MariaDB
