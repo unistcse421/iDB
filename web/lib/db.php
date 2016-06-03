@@ -22,7 +22,7 @@
         return $result;
     }
 
-    function get_json_from_db($mysqli, $query, $order="") {
+    function get_json_from_db($mysqli, $query, $reverse=false) {
         $data = array();
         $result = $mysqli->query($query);
 
@@ -31,10 +31,11 @@
             $data[$i] = $row;
         }
 
-        if($order == "REVERSE") {
-            $data = array_reverse($data);
+        if($reverse) {
+            return json_encode(array_reverse($data));
         }
-
-        return json_encode($data);
+        else {
+            return json_encode($data);
+        }
     }
 ?>
