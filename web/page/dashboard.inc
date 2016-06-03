@@ -70,9 +70,9 @@
             .'</form>';
     }
     if(!empty($json)) {
-        for($i=0; $i<count($json); $i++) {
+        /*for($i=0; $i<count($json); $i++) {
             echo $json[$i].'<br>';
-        }
+        }*/
     }
 ?>
 </div>
@@ -80,3 +80,10 @@
 <div id="lineChart"></div>
 
 <div id="probChart"></div><div id="FSChart"></div>
+
+<div id="json" style="display: none;">
+    <?php echo $_POST['machine_id']; ?>
+</div>
+
+<div id="result">
+</div>

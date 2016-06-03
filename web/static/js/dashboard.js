@@ -199,3 +199,20 @@ d3.select("#FSChart")
 
 
 //-----------------------------------------------------------
+
+setInterval(getData, 2000);
+
+function getData() {
+    $(document).ready(function() {
+        jQuery.ajax({
+            type:"GET",
+            url:ROOT + "/process/echo_data.php?machine_id=" + parseInt(document.getElementById('json').innerHTML),
+            success : function(data) {
+                document.getElementById('result').innerHTML = data;
+            },
+            error : function(xhr, status, error) {
+                document.getElementById('result').innerHTML = error;
+            }
+        });
+    });
+}
