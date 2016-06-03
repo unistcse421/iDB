@@ -1,8 +1,8 @@
-var svg1 = d3.select("#lineChart").append("svg")
+
 
 var drawGraph1 = function(data) {
 
-  d3.select("#lineChart").select("svg").remove();
+  d3.select("#lineChart").selectAll("svg").remove();
 
   var superscript = "⁰¹²³⁴⁵⁶⁷⁸⁹",
       formatPower = function(d) { return (d + "").split("").map(function(c) { return superscript[c]; }).join(""); };
@@ -33,7 +33,8 @@ var drawGraph1 = function(data) {
       .x(function(d) { return x(d[0]); })
       .y(function(d) { return y(d[1]); });
 
-  svg1.attr("width", width + margin.left + margin.right)
+  var svg1 = d3.select("#lineChart").append("svg")
+        .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
