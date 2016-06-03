@@ -221,7 +221,7 @@ function getData() {
             success : function(data) {
                 document.getElementById('result').innerHTML = data;
                 dbData = data;
-                draGraph1(data);
+                drawGraph1(data);
             },
             error : function(xhr, status, error) {
                 document.getElementById('result').innerHTML = error;
