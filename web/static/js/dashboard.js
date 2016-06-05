@@ -2,7 +2,7 @@
 
 var drawGraph1 = function(data) {
 
-  var tData = data[0];
+  var tData = data["a1"];
 
   console.log(tData);
 
