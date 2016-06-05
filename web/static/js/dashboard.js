@@ -5,7 +5,6 @@ var drawGraph1 = function(data) {
   var tData = data[0];
 
   console.log(tData);
-  console.log(data);
 
   d3.select("#lineChart").selectAll("svg").remove();
 
@@ -21,7 +20,7 @@ var drawGraph1 = function(data) {
       .range([0, width]);
 
   var y = d3.scale.linear()
-      .domain([0 60])
+      .domain([0, 60])
       .range([height, 0]);
 
   var xAxis = d3.svg.axis()
