@@ -2,6 +2,11 @@
 
 var drawGraph1 = function(data) {
 
+  var tData = data[0];
+
+  console.log(tData);
+  console.log(data);
+
   d3.select("#lineChart").selectAll("svg").remove();
 
   var superscript = "⁰¹²³⁴⁵⁶⁷⁸⁹",
@@ -15,9 +20,8 @@ var drawGraph1 = function(data) {
       .domain([0, 100])
       .range([0, width]);
 
-  var y = d3.scale.log()
-      .base(Math.E)
-      .domain([Math.exp(0), Math.exp(9)])
+  var y = d3.scale.linear()
+      .domain([0 60])
       .range([height, 0]);
 
   var xAxis = d3.svg.axis()
@@ -26,8 +30,8 @@ var drawGraph1 = function(data) {
 
   var yAxis = d3.svg.axis()
       .scale(y)
-      .orient("left")
-      .tickFormat(function(d) { return "e" + formatPower(Math.round(Math.log(d))); });
+      .orient("left");
+//       .tickFormat(function(d) { return "e" + formatPower(Math.round(Math.log(d))); });
 
   var line = d3.svg.line()
       .x(function(d) { return x(d[0]); })
