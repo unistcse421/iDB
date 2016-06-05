@@ -2,9 +2,8 @@
 
 var drawGraph1 = function(data) {
 
-  var tData = data.a1;
-
   console.log(data);
+  var tData = data['a1'];
 
   d3.select("#lineChart").selectAll("svg").remove();
 
