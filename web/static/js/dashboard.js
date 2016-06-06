@@ -2,6 +2,7 @@
 
 var drawGraph1 = function(data) {
 
+  console.log(data);
   var tData = data["a1"];
 
   d3.select("#lineChart").selectAll("svg").remove();
@@ -224,7 +225,7 @@ function getData() {
             success : function(data) {
 //                 document.getElementById('result').innerHTML = data;
                 dbData = jQuery.parseJSON(data);
-               console.log(dbData);
+//                console.log(dbData);
             },
             error : function(xhr, status, error) {
 //                 document.getElementById('result').innerHTML = error;
