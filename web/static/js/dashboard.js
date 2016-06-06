@@ -21,7 +21,8 @@ var drawGraph1 = function(data) {
 
   var xAxis = d3.svg.axis()
       .scale(x)
-      .orient("bottom");
+      .orient("bottom")
+      .tickFormat(function (d) { return ''; });
 
   var yAxis = d3.svg.axis()
       .scale(y)
@@ -46,8 +47,8 @@ var drawGraph1 = function(data) {
   svg1.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + (height + 10) + ")")
-      .call(xAxis)
-      .tickFormat(function (d) { return ''; });;
+      .call(xAxis);
+
 
   svg1.append("path")
       .datum(tData)
@@ -78,7 +79,8 @@ var drawGraph2 = function(data) {
 
   var xAxis = d3.svg.axis()
       .scale(x)
-      .orient("bottom");
+      .orient("bottom")
+      .tickFormat(function (d) { return ''; });
 
   var yAxis = d3.svg.axis()
       .scale(y)
@@ -103,8 +105,7 @@ var drawGraph2 = function(data) {
   svg1.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + (height + 10) + ")")
-      .call(xAxis)
-      .tickFormat(function (d) { return ''; });;
+      .call(xAxis);
 
   svg1.append("path")
       .datum(tData)
