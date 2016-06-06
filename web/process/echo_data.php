@@ -14,7 +14,11 @@
 
         echo '[';
         for($i=0; $i<count($json); $i++) {
+          if (i == count($json)-1) {
+            echo $json[$i];
+          } else {
             echo $json[$i].',';
+          }
         }
         echo ']';
     }
