@@ -119,7 +119,7 @@ var drawGraph3 = function(data) {
     aData.push((Number(tData[i].value) + Number(hData[i].value))/2);
   }
 
-  console.log(aData);
+//   console.log(aData);
 
   d3.select("#lineChart").selectAll("svg").remove();
 
@@ -129,7 +129,7 @@ var drawGraph3 = function(data) {
 
   var x = d3.scale.linear()
       .domain([0, 100])
-      .rangeRoundBands([0, width], .1);
+      .range([0, width]);
 
   var y = d3.scale.linear()
       .domain([15, 45])
@@ -173,7 +173,7 @@ var drawGraph3 = function(data) {
       .enter().append("rect")
         .attr("class", "bar")
         .attr("x", function(d,i) { return x(i); })
-        .attr("width", x.rangeBand())
+        .attr("width", 7)
         .attr("y", function(d) { return y(d); })
         .attr("height", function(d) { return height - y(d); });
 
