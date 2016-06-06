@@ -224,7 +224,7 @@ function getData() {
             url:ROOT + "/process/echo_data.php?machine_id=" + parseInt(document.getElementById('json').innerHTML),
             success : function(data) {
 //                 document.getElementById('result').innerHTML = data;
-                dbData = eval(data);
+                dbData = $.parseJSON(data);
             },
             error : function(xhr, status, error) {
 //                 document.getElementById('result').innerHTML = error;
