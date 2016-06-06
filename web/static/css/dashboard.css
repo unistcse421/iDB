@@ -49,11 +49,11 @@
 }
 
 .bar {
-  fill: rgba(121,189,143);
+  fill: rgb(121,189,143);
   opacity: 0.7;
 }
 
 .bar:hover {
-  fill: rgba(121,189,143);
+  fill: rgb(121,189,143);
   opacity: 1;
 }
