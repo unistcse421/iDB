@@ -75,9 +75,9 @@
         }*/
     }
 ?>
-    <div id="lineChart"></div>
+    <div id="StateChart"></div>
 
-    <div id="probChart"></div><div id="FSChart"></div>
+    <div id="Line1Chart"></div><div id="Line2Chart"></div>
 
     <div id="json" style="display: none;">
         <?php echo $_POST['machine_id']; ?>
