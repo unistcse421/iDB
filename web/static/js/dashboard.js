@@ -2,7 +2,7 @@
 
 var drawGraph1 = function(data) {
 
-  console.log(data['a1']);
+//   console.log(data['a1']);
   var tData = data['a1'];
 
   d3.select("#lineChart").selectAll("svg").remove();
@@ -32,7 +32,7 @@ var drawGraph1 = function(data) {
 //       .tickFormat(function(d) { return "e" + formatPower(Math.round(Math.log(d))); });
 
   var line = d3.svg.line()
-      .x(function(d,i) { return i; })
+      .x(function(d,i) { return x(i); })
       .y(function(d) { return y(d["value"]); });
 
   var svg1 = d3.select("#lineChart").append("svg")
