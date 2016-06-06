@@ -47,11 +47,14 @@ var drawGraph1 = function(data) {
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + (height + 10) + ")")
       .call(xAxis);
+//       .selectAll("text").remove();
 
   svg1.append("path")
       .datum(tData)
       .attr("class", "line")
-      .attr("d", line);
+      .attr("d", line)
+      .on("mouseover", function(d,i) { svg1.append("g").attr("class","date").attr("x", x(i)).attr("y", height-d["value"]-5).text(d["date"]); })
+      .on("mouseout", function(d,i) { svg1.selectAll(".date").remove(); });
 }
 
 
@@ -100,12 +103,15 @@ var drawGraph2 = function(data) {
   svg1.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + (height + 10) + ")")
-      .call(xAxis);
+      .call(xAxis)
+      .selectAll("text").remove();
 
   svg1.append("path")
       .datum(tData)
       .attr("class", "line")
-      .attr("d", line);
+      .attr("d", line)
+      .on("mouseover", function(d,i) { svg1.append("g").attr("class","date").attr("x", x(i)).attr("y", height-d["value"]-5).text(d["date"]); })
+      .on("mouseout", function(d,i) { svg1.selectAll(".date").remove(); });
 }
 
 var drawGraph3 = function(data) {
@@ -173,11 +179,12 @@ var drawGraph3 = function(data) {
         .data(aData)
       .enter().append("rect")
         .attr("class", "bar")
-        .attr("x", function(d,i) { return x(i); })
+        .attr("x", function(d,i) { return x(i) + 0.1; })
         .attr("width", 7)
         .attr("y", function(d) { return y(d); })
         .attr("height", function(d) { return height - y(d); });
-
+        .on("mouseover", function(d,i) { svg1.append("g").attr("class","date").attr("x", x(i)).attr("y", height-tData[i]["value"]-5).text(tData[i]["date"]); })
+        .on("mouseout", function(d,i) { svg1.selectAll(".date").remove(); });
 
 }
 
