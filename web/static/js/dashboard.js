@@ -16,7 +16,7 @@ var drawGraph1 = function(data) {
       .range([0, width]);
 
   var y = d3.scale.linear()
-      .domain([0, 60])
+      .domain([10, 40])
       .range([height, 0]);
 
   var xAxis = d3.svg.axis()
@@ -32,7 +32,7 @@ var drawGraph1 = function(data) {
       .x(function(d,i) { return x(i); })
       .y(function(d) { return y(d["value"]); });
 
-  var svg1 = d3.select("#lineChart").append("svg")
+  var svg1 = d3.select("#ProbChart").append("svg")
         .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
@@ -70,7 +70,7 @@ var drawGraph2 = function(data) {
       .range([0, width]);
 
   var y = d3.scale.linear()
-      .domain([0, 60])
+      .domain([20, 50])
       .range([height, 0]);
 
   var xAxis = d3.svg.axis()
@@ -86,7 +86,7 @@ var drawGraph2 = function(data) {
       .x(function(d,i) { return x(i); })
       .y(function(d) { return y(d["value"]); });
 
-  var svg1 = d3.select("#lineChart").append("svg")
+  var svg1 = d3.select("#FSChart").append("svg")
         .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
