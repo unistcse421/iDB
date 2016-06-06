@@ -8,8 +8,8 @@ var drawGraph1 = function(data) {
   d3.select("#ProbChart").selectAll("svg").remove();
 
   var margin = {top: 40.5, right: 40.5, bottom: 50.5, left: 60.5},
-      width = 410 - margin.left - margin.right,
-      height = 240 - margin.top - margin.bottom;
+      width = 470 - margin.left - margin.right,
+      height = 300 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
       .domain([0, 100])
@@ -62,8 +62,8 @@ var drawGraph2 = function(data) {
   d3.select("#FSChart").selectAll("svg").remove();
 
   var margin = {top: 40.5, right: 40.5, bottom: 50.5, left: 60.5},
-      width = 410 - margin.left - margin.right,
-      height = 240 - margin.top - margin.bottom;
+      width = 470 - margin.left - margin.right,
+      height = 300 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
       .domain([0, 100])

@@ -44,6 +44,6 @@
 
 .line {
   fill: none;
-  stroke: steelblue;
+  stroke: rgb(121, 189, 143);
   stroke-width: 1.5px;
 }
