@@ -5,14 +5,11 @@ var drawGraph1 = function(data) {
 //   console.log(data['a1']);
   var tData = data['a1'];
 
-  d3.select("#lineChart").selectAll("svg").remove();
-
-  var superscript = "⁰¹²³⁴⁵⁶⁷⁸⁹",
-      formatPower = function(d) { return (d + "").split("").map(function(c) { return superscript[c]; }).join(""); };
+  d3.select("#ProbChart").selectAll("svg").remove();
 
   var margin = {top: 40.5, right: 40.5, bottom: 50.5, left: 60.5},
-      width = 960 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
+      width = 410 - margin.left - margin.right,
+      height = 240 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
       .domain([0, 100])
@@ -57,42 +54,60 @@ var drawGraph1 = function(data) {
       .attr("d", line);
 }
 
-/*
+
 var drawGraph2 = function(data) {
 
-  var x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+  var tData = data['a2'];
 
-  var w = 410, h = 240;
-  var m = {top:30, bottom: 30, left: 30, right: 30};
-  var svg2 = d3.select("#probChart")
-              .append("svg")
-              .attr("width", w + m.left + m.right).attr("height", h + m.top + m.bottom)
-              .append("g")
-              .attr("transform", "translate(" + m.left + "," + m.top + ")");;
+  d3.select("#FSChart").selectAll("svg").remove();
 
-   var x2 = d3.scale.linear()
-      .domain([0 100])
-      .range([0, h]);
+  var margin = {top: 40.5, right: 40.5, bottom: 50.5, left: 60.5},
+      width = 410 - margin.left - margin.right,
+      height = 240 - margin.top - margin.bottom;
 
-  svg2.selectAll("rect")
-      .data(x)
-      .enter()
-      .append("rect")
-      .attr("x", function(d, i) {
-          return i*(w/x.length);
-      })
-      .attr("y", function(d) {
-          return h - d;
-      })
-      .attr("width", w/x.length - 1)
-      .attr("height", function(d) {
-          return d;
-      })
-      .attr("fill", function(d) {
-          return "hotpink";
-      });
+  var x = d3.scale.linear()
+      .domain([0, 100])
+      .range([0, width]);
+
+  var y = d3.scale.linear()
+      .domain([0, 60])
+      .range([height, 0]);
+
+  var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("bottom");
+
+  var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left");
+//       .tickFormat(function(d) { return "e" + formatPower(Math.round(Math.log(d))); });
+
+  var line = d3.svg.line()
+      .x(function(d,i) { return x(i); })
+      .y(function(d) { return y(d["value"]); });
+
+  var svg1 = d3.select("#lineChart").append("svg")
+        .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  svg1.append("g")
+      .attr("class", "axis axis--y")
+      .attr("transform", "translate(-10,0)")
+      .call(yAxis);
+
+  svg1.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + (height + 10) + ")")
+      .call(xAxis);
+
+  svg1.append("path")
+      .datum(tData)
+      .attr("class", "line")
+      .attr("d", line);
 }
- */
+
 
 /* var margin = {top: 20, right: 80, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
@@ -184,35 +199,6 @@ d3.tsv(ROOT + "/static/js/data.tsv", function(error, data) {
 });
  */
 
-// drawGraph1();
-// drawGraph2();
-
-
-//-------------------------------------------------------------
-
-
-/* var width2 = 470,
-    height2 = 300;
-
-var data2 = d3.range(20).map(function() { return [Math.random() * width, Math.random() * height]; });
-
-var color = d3.scale.category10();
-
-d3.select("#FSChart")
-  .append("svg")
-    .attr("width", width2)
-    .attr("height", height2)
-  .selectAll("circle")
-    .data(data2)
-  .enter().append("circle")
-    .attr("transform", function(d) { return "translate(" + d + ")"; })
-    .attr("r", 10)
-    .style("fill", function(d, i) { return color(i); });
- */
-
-
-
-//-----------------------------------------------------------
 
 setInterval(getData, 2000);
 var dbData;
