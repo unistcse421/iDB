@@ -116,6 +116,8 @@ var drawGraph3 = function(data) {
   var aData = [];
 
   for (var i = 0; i < tData.length; i++) {
+    console.log(tData[i]);
+    console.log(hData[i]);
     aData.push((tData[i].value + hData[i].value)/2);
   }
 
@@ -128,9 +130,11 @@ var drawGraph3 = function(data) {
       height = 300 - margin.top - margin.bottom;
 
   var x = d3.scale.ordinal()
+      .domain([0, 100])
       .rangeRoundBands([0, width], .1);
 
   var y = d3.scale.linear()
+      .domain([15, 45]);
       .range([height, 0]);
 
   var xAxis = d3.svg.axis()
@@ -148,8 +152,8 @@ var drawGraph3 = function(data) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-    x.domain(data.map(function(d) { return d.letter; }));
-    y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+//     x.domain(data.map(function(d) { return d.letter; }));
+//     y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 
     svg.append("g")
         .attr("class", "x axis")
