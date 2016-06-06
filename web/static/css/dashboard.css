@@ -1,4 +1,4 @@
-#StateChart {
+#lineChart {
   background: rgba(255,255,255,0.7);
 	position:relative;
   display: inline-block;
@@ -9,7 +9,7 @@
   border-radius: 10px 10px 10px 10px;
 }
 
-#Line1Chart {
+#probChart {
   background: rgba(255,255,255,0.7);
 	position:relative;
   display: inline-block;
@@ -19,7 +19,7 @@
   border-radius: 10px 10px 10px 10px;
 }
 
-#Line2Chart {
+#FSChart {
   background: rgba(255,255,255,0.7);
 	position:relative;
   display: inline-block;
