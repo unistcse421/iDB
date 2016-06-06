@@ -47,7 +47,7 @@ var drawGraph1 = function(data) {
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + (height + 10) + ")")
       .call(xAxis)
-      .tickFormat("");
+      .tickFormat(function (d) { return ''; });;
 
   svg1.append("path")
       .datum(tData)
@@ -104,7 +104,7 @@ var drawGraph2 = function(data) {
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + (height + 10) + ")")
       .call(xAxis)
-      .tickFormat("");
+      .tickFormat(function (d) { return ''; });;
 
   svg1.append("path")
       .datum(tData)
