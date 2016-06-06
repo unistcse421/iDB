@@ -46,8 +46,8 @@ var drawGraph1 = function(data) {
   svg1.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + (height + 10) + ")")
-      .call(xAxis);
-//       .selectAll("text").remove();
+      .call(xAxis)
+      .select(".axis axis--x").selectAll("text").remove();
 
   svg1.append("path")
       .datum(tData)
@@ -104,7 +104,7 @@ var drawGraph2 = function(data) {
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + (height + 10) + ")")
       .call(xAxis)
-      .selectAll("text").remove();
+      .select(".axis axis--x").selectAll("text").remove();
 
   svg1.append("path")
       .datum(tData)
@@ -159,10 +159,10 @@ var drawGraph3 = function(data) {
 //     x.domain(data.map(function(d) { return d.letter; }));
 //     y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 
-    svg.append("g")
+/*     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+        .call(xAxis); */
 
      svg.append("g")
         .attr("class", "y axis")
