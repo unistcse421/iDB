@@ -174,7 +174,7 @@ var drawGraph3 = function(data) {
         .attr("width", x.rangeBand())
         .attr("y", function(d) { return y(d); })
         .attr("height", function(d) { return height - y(d); });
-  });
+
 
 }
 
