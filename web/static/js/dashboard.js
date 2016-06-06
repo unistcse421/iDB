@@ -2,8 +2,8 @@
 
 var drawGraph1 = function(data) {
 
-  console.log(data);
-  var tData = data.a1;
+//   console.log(data);
+  var tData = data["a1"];
 
   d3.select("#lineChart").selectAll("svg").remove();
 
@@ -224,7 +224,7 @@ function getData() {
             url:ROOT + "/process/echo_data.php?machine_id=" + parseInt(document.getElementById('json').innerHTML),
             success : function(data) {
 //                 document.getElementById('result').innerHTML = data;
-                dbData = data;
+                dbData = eval(data);
             },
             error : function(xhr, status, error) {
 //                 document.getElementById('result').innerHTML = error;
