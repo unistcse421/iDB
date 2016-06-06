@@ -12,7 +12,7 @@
             $json[$i] = '"'.$device['device_id'].'":'.get_json_from_db($mysqli, "SELECT * FROM data WHERE device_id='{$device['device_id']}' ORDER BY created DESC LIMIT 100", true);
         }
 
-        echo '[';
+      echo '{';
         for($i=0; $i<count($json); $i++) {
           if (i == count($json)-1) {
             echo $json[$i];
@@ -20,7 +20,7 @@
             echo $json[$i].',';
           }
         }
-        echo ']';
+      echo '}';
     }
 
 ?>
