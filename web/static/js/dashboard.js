@@ -53,7 +53,7 @@ var drawGraph1 = function(data) {
       .datum(tData)
       .attr("class", "line")
       .attr("d", line)
-      .on("mouseover", function(d,i) { svg1.append("g").attr("class","date").attr("x", x(i)).attr("y", height-d["value"]-5).text(d["date"]); })
+      .on("mouseover", function(d,i) { svg1.append("text").attr("class","date").attr("x", x(i)).attr("y", height-d["value"]-5).text(d["created"]); })
       .on("mouseout", function(d,i) { svg1.selectAll(".date").remove(); });
 }
 
@@ -110,7 +110,7 @@ var drawGraph2 = function(data) {
       .datum(tData)
       .attr("class", "line")
       .attr("d", line)
-      .on("mouseover", function(d,i) { svg1.append("g").attr("class","date").attr("x", x(i)).attr("y", height-d["value"]-5).text(d["date"]); })
+      .on("mouseover", function(d,i) { svg1.append("text").attr("class","date").attr("x", x(i)).attr("y", height-d["value"]-5).text(d["created"]); })
       .on("mouseout", function(d,i) { svg1.selectAll(".date").remove(); });
 }
 
@@ -183,8 +183,8 @@ var drawGraph3 = function(data) {
         .attr("width", 7)
         .attr("y", function(d) { return y(d); })
         .attr("height", function(d) { return height - y(d); })
-        .on("mouseover", function(d,i) { mouseX = d3.mouse(this)[0]; mouseY = d3.mouse(this)[1]; svg.append("text").attr("x", mouseX).attr("y",mouseY).text(tData[i]["created"]); });
-//         .on("mouseout", function(d,i) { svg.selectAll(".date").remove(); });
+        .on("mouseover", function(d,i) { mouseX = d3.mouse(this)[0]; mouseY = d3.mouse(this)[1]; svg.append("text").attr("class","date").attr("x", mouseX).attr("y",mouseY).text(tData[i]["created"]); });
+        .on("mouseout", function(d,i) { svg.selectAll(".date").remove(); });
 
 }
 
