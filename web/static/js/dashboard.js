@@ -127,7 +127,7 @@ var drawGraph3 = function(data) {
       width = 960 - margin.left - margin.right,
       height = 300 - margin.top - margin.bottom;
 
-  var x = d3.scale.ordinal()
+  var x = d3.scale.linear()
       .domain([0, 100])
       .rangeRoundBands([0, width], .1);
 
