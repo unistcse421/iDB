@@ -116,8 +116,7 @@ var drawGraph3 = function(data) {
   var aData = [];
 
   for (var i = 0; i < tData.length; i++) {
-    console.log(tData[i]);
-    console.log(hData[i]);
+    console.log((tData[i].value) + (hData[i].value));
     aData.push((tData[i].value + hData[i].value)/2);
   }
 
