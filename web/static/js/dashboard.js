@@ -134,7 +134,7 @@ var drawGraph3 = function(data) {
       .rangeRoundBands([0, width], .1);
 
   var y = d3.scale.linear()
-      .domain([15, 45]);
+      .domain([15, 45])
       .range([height, 0]);
 
   var xAxis = d3.svg.axis()
