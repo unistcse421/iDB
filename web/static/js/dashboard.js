@@ -2,8 +2,7 @@
 
 var drawGraph1 = function(data) {
 
-//   console.log(data);
-//   var tData = data["a1"][0];
+  var tData = data["a1"];
 
   d3.select("#lineChart").selectAll("svg").remove();
 
@@ -32,8 +31,8 @@ var drawGraph1 = function(data) {
 //       .tickFormat(function(d) { return "e" + formatPower(Math.round(Math.log(d))); });
 
   var line = d3.svg.line()
-      .x(function(d) { return x(d[0]); })
-      .y(function(d) { return y(d[1]); });
+      .x(function(d,i) { return i; })
+      .y(function(d) { return y(d["value"]); });
 
   var svg1 = d3.select("#lineChart").append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -52,7 +51,7 @@ var drawGraph1 = function(data) {
       .call(xAxis);
 
   svg1.append("path")
-      .datum(d3.range(100).map(function(x) { return [x, x * x + x + 1]; }))
+      .datum(tData)
       .attr("class", "line")
       .attr("d", line);
 }
@@ -223,7 +222,7 @@ function getData() {
             type:"GET",
             url:ROOT + "/process/echo_data.php?machine_id=" + parseInt(document.getElementById('json').innerHTML),
             success : function(data) {
-                document.getElementById('result').innerHTML = data;
+//                 document.getElementById('result').innerHTML = data;
                 dbData = jQuery.parseJSON(data);
             },
             error : function(xhr, status, error) {
