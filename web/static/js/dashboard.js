@@ -158,9 +158,10 @@ var drawGraph3 = function(data) {
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 
-/*     svg.append("g")
+     svg.append("g")
         .attr("class", "y axis")
-        .call(yAxis)
+        .call(yAxis);
+        /*
       .append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
