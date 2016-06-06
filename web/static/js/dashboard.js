@@ -289,6 +289,7 @@ function getData() {
         });
     });
 
-    drawGraph1(dbData);
-    drawGraph2(dbData);
+  drawGraph1(dbData);
+  drawGraph2(dbData);
+  drawGraph3(dbData);
 }
