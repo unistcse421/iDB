@@ -224,6 +224,7 @@ function getData() {
             success : function(data) {
 //                 document.getElementById('result').innerHTML = data;
                 dbData = jQuery.parseJSON(data);
+               console.log(dbData);
             },
             error : function(xhr, status, error) {
 //                 document.getElementById('result').innerHTML = error;
