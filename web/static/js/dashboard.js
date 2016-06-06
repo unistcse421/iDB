@@ -108,7 +108,7 @@ var drawGraph2 = function(data) {
       .attr("d", line);
 }
 
-drawGraph3(data) {
+var drawGraph3 = function(data) {
 
   var tData = data['a1'];
   var hData = data['a2'];
