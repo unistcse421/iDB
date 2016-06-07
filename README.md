@@ -1,5 +1,5 @@
 ### CSE421 Term Project
-# iDB - Smart Factory System
+# [iDB - Smart Factory System](http://10.16.27.158:3000)
 
 This project is done in UNIST CSE421 Database Systems Class.
 
