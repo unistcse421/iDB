@@ -185,7 +185,7 @@ var drawGraph3 = function(data) {
         .attr("width", 7)
         .attr("y", function(d) { return y(d); })
         .attr("height", function(d) { return height - y(d); })
-        .attr("fill", function(d, i) { if(i == 99 & d > 35) { if (alarm == 0) { alert("Danger!: the value is too high."); alarm = 1; } return d3.rgb(255, 97, 56); } else { alarm = 0; return d3.rgb(121,189,143); } })
+        .attr("fill", function(d, i) { if(d > 35) { if (i == 99 & alarm == 0) { alert("Danger!: the value is too high."); alarm = 1; } return d3.rgb(255, 97, 56); } else { alarm = 0; return d3.rgb(121,189,143); } })
         .on("mouseover", function(d,i) { mouseX = d3.mouse(this)[0]; mouseY = d3.mouse(this)[1]; svg.append("text").attr("class","date").attr("x", mouseX).attr("y",mouseY).text(tData[i]["created"]); })
         .on("mouseout", function(d,i) { svg.selectAll(".date").remove(); });
 
